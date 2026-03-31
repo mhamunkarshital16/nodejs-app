@@ -16,8 +16,8 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                sh 'docker tag node-js:v1 username/your-image'
-                sh 'docker push username/your-image'
+                sh 'docker tag node-js:v1 moreshital16/node-js:v1'
+                sh 'docker push moreshital16/node-js:v1'
             }
         }
 
