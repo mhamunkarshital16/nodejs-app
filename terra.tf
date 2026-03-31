@@ -13,7 +13,7 @@ resource "aws_instance" "node_app" {
               yum update -y
               yum install docker -y
               service docker start
-              docker run -d -p 3000:3000 your-docker-image
+              docker run -d -p 3000:3000 node-js:v1
               EOF
 
   tags = {
