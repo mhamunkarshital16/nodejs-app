@@ -31,7 +31,7 @@ resource "aws_instance" "node_app" {
 
   key_name = "test-app_key"
 
-  vpc_security_group_ids = aws_security_group.node_sg.id
+  vpc_security_group_ids = [aws_security_group.node_sg.id]
 
   user_data = <<-EOF
               #!/bin/bash
