@@ -6,7 +6,7 @@ resource "aws_instance" "node_app" {
   ami           = "ami-0f5ee92e2d63afc18" # Example Amazon Linux
   instance_type = "t3.micro"
 
-  key_name = "my-key"
+  key_name = "test-app_key"
 
   user_data = <<-EOF
               #!/bin/bash
