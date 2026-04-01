@@ -26,7 +26,7 @@ resource "aws_security_group" "node_sg" {
 
 
 resource "aws_instance" "node_app" {
-  ami           = "ami-0f5ee92e2d63afc18" # Example Amazon Linux
+  ami           = "ami-05d2d839d4f73aafb"
   instance_type = "t3.micro"
 
   key_name = "test-app_key"
@@ -37,11 +37,12 @@ resource "aws_instance" "node_app" {
               #!/bin/bash
               sudo apt update -y
               sudo apt install docker.io -y
+              sudo systemctl start docker
               sudo usermod -aG docker $USER && newgrp docker
-              docker run -d -p 3000:3000 node-js:v1
+              docker run -d -p 3000:3000 moreshital16/node-js:v1
               EOF
 
   tags = {
-    Name = "NodeAppServer-1"
+    Name = "NodejsAppServer"
   }
 }
